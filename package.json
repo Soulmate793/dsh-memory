@@ -1,0 +1,40 @@
+{
+  "name": "dsh-memory",
+  "version": "1.0.0",
+  "description": "Human-like memory for DeepSeek Harness agents: Ebbinghaus decay, sleep consolidation, retrieval reinforcement, hash-chain audit, memory zones, local-only storage.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/core/",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "docs/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "memory",
+    "agent-memory",
+    "ebbinghaus",
+    "consolidation",
+    "hash-chain",
+    "local-first"
+  ],
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

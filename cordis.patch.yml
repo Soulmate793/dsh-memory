@@ -1,0 +1,10 @@
+# 记忆库插件：数据默认保存在 ~/.dsh/qq-memory（本地，不上传）。
+- insert:
+    - id: memory
+      name: 'dsh-memory'
+      config:
+        memory:
+          dataDir: ''      # 留空 = ~/.dsh/qq-memory
+          maxItems: 20000
+          recallLimit: 8
+          includeVault: false

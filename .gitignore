@@ -1,0 +1,8 @@
+node_modules/
+tools/
+*.log
+data/
+*.pem
+memory*.jsonl
+memory.json
+.env
