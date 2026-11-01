@@ -42,6 +42,14 @@
 
 `dsh-memory` 把这五件事做成了可运行的代码。
 
+## 新增能力（v1.1）
+
+- **记忆分区**：自我 / 关系 / 情节 / 语义 / 生活 / 学习 / 隔离，各区独立衰减、检索权重与隐私策略；隔离区默认不召回
+- **关系台账**：自动为每个聊过的人维护 `relationships.json`（昵称、画像、重要备注、最近互动），按人注入
+- **固定记忆**：`memory_pin` 把关键记忆设为永不遗忘，每次唤醒必注入
+- **情绪与性格**：8 维情绪状态 + 性格成长；支持 `emotion_set` 主动设定当下心情；语音可带情绪
+- **容量扩到 50 万条**：`maxItems: 500000`，并支持环境变量 `MEMORY_MAX_ITEMS` 覆盖
+- **锁自愈**：进程异常退出留下的僵尸锁会被自动清理，不会再把记忆库锁死
 ## 核心特性
 
 | 特性 | 说明 |
@@ -87,7 +95,7 @@ plugin_manager(action: "install_bundle", target: "<绝对路径>/dsh-memory-plug
       config:
         memory:
           dataDir: ''          # 留空 = ~/.dsh/qq-memory
-          maxItems: 20000      # 容量上限，超出按强度淘汰
+          maxItems: 500000     # 容量上限，超出按强度淘汰
           recallLimit: 8       # 默认召回条数
           includeVault: false  # 默认不读取隔离区
 ```
@@ -279,7 +287,7 @@ memory_chain_verify()
 ## 常见问题
 
 **Q：记忆会不会无限增长？**
-A：有 `maxItems` 上限（默认 2 万），超出按当前强度从最弱开始淘汰。
+A：有 `maxItems` 上限（默认 50 万），超出按当前强度从最弱开始淘汰。
 
 **Q：重启 DSH 会丢记忆吗？**
 A：不会，全部持久化在 `dataDir`。

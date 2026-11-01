@@ -5,6 +5,6 @@
       config:
         memory:
           dataDir: ''      # 留空 = ~/.dsh/qq-memory
-          maxItems: 20000
+          maxItems: 500000
           recallLimit: 8
           includeVault: false

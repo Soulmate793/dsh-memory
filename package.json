@@ -1,6 +1,6 @@
 {
   "name": "dsh-memory",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Human-like memory for DeepSeek Harness agents: Ebbinghaus decay, sleep consolidation, retrieval reinforcement, hash-chain audit, memory zones, local-only storage.",
   "type": "module",
   "main": "./lib/index.js",
